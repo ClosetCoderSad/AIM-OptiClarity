@@ -1,0 +1,24 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "backend/model_apis/*.py",
+        "use": "@vercel/python"
+      },
+      {
+        "src": "backend/chatbot/*.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/model_apis/(.*)",
+        "dest": "/backend/model_apis/$1.py"
+      },
+      {
+        "src": "/api/chatbot/(.*)",
+        "dest": "/backend/chatbot/$1.py"
+      }
+    ]
+  }
+  
